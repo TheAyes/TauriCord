@@ -1,0 +1,16 @@
+{
+	"name": "tauricord",
+	"type": "module",
+	"scripts": {
+		"dev": ""
+	},
+	"workspaces": ["modules/*"],
+	"devDependencies": {
+		"@types/bun": "latest",
+		"lefthook": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.7.2",
+		"@biomejs/biome": "latest"
+	}
+}
