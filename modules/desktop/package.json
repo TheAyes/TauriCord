@@ -1,22 +1,22 @@
 {
-	"name": "nuxt-app",
+	"name": "desktop",
 	"private": true,
+	"version": "0.1.0",
 	"type": "module",
 	"scripts": {
-		"build": "nuxt build",
-		"dev": "nuxt dev",
+		"dev": "vite",
 		"tauri:dev": "tauri dev",
-		"generate": "nuxt generate",
-		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare"
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"tauri": "tauri"
 	},
 	"dependencies": {
-		"nuxt": "^3.15.1",
-		"vue": "latest",
-		"vue-router": "latest",
-		"sass": "latest"
+		"@tauri-apps/api": "^2",
+		"@tauri-apps/plugin-opener": "^2"
 	},
 	"devDependencies": {
-		"@tauri-apps/cli": "latest"
+		"@tauri-apps/cli": "^2",
+		"vite": "^6.0.3",
+		"typescript": "~5.6.2"
 	}
 }

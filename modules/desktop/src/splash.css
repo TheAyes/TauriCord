@@ -1,0 +1,11 @@
+body {
+	height: 100%;
+	background: #0f0f0f;
+}
+
+img#loading-gif {
+	display: block;
+	margin: 0 auto;
+	aspect-ratio: 1 / 1;
+	object-fit: contain;
+}

@@ -3,11 +3,14 @@ pre-commit:
         check:
             glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
             run: |
-                if type nix >/dev/null; then
-                    nix develop --command biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
-                else
-                    bunx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
-                fi
+                bash -c '
+                    COMMAND="biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}"
+                    if type nix >/dev/null 2>&1; then
+                        nix develop --command ${COMMAND}
+                    else
+                        bunx ${COMMAND}
+                    fi
+                '
             stage_fixed: true
 
 pre-push:
@@ -15,8 +18,11 @@ pre-push:
         check:
             glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
             run: |
-                if type nix >/dev/null; then
-                    nix develop --command biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {push_files}
-                else
-                    bunx biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {push_files}
-                fi
+                bash -c '
+                    COMMAND="biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {push_files}"
+                    if type nix >/dev/null 2>&1; then
+                        nix develop --command ${COMMAND}
+                    else
+                        bunx ${COMMAND}
+                    fi
+                '

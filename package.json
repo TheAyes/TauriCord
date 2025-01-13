@@ -1,9 +1,7 @@
 {
 	"name": "tauricord",
 	"type": "module",
-	"scripts": {
-		"dev": ""
-	},
+	"scripts": {},
 	"workspaces": ["modules/*"],
 	"devDependencies": {
 		"@types/bun": "latest",
@@ -12,5 +10,6 @@
 	"peerDependencies": {
 		"typescript": "^5.7.2",
 		"@biomejs/biome": "latest"
-	}
+	},
+	"trustedDependencies": ["@biomejs/biome", "@parcel/watcher", "nuxt-app"]
 }
