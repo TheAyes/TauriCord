@@ -1,6 +1,8 @@
 body {
+	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 	height: 100%;
-	background: #0f0f0f;
+	color: #dedef0;
+	background: rgb(33, 33, 33);
 }
 
 img#loading-gif {
@@ -8,4 +10,23 @@ img#loading-gif {
 	margin: 0 auto;
 	aspect-ratio: 1 / 1;
 	object-fit: contain;
+}
+
+article {
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+
+	& > progress {
+		width: 100%;
+
+		&::-webkit-progress-bar {
+			border-radius: 10px;
+			background-color: #f3f3f3; /* Background of the container */
+		}
+		&::-webkit-progress-value {
+			border-radius: 10px; /* Rounded corners for modern look */
+			background-color: #4caf50; /* Green fill */
+		}
+	}
 }

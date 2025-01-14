@@ -11,17 +11,7 @@
 	},
 	"app": {
 		"withGlobalTauri": true,
-		"windows": [
-			{
-				"label": "splash",
-				"width": 300,
-				"height": 350,
-				"alwaysOnTop": true,
-				"url": "/splash",
-				"backgroundColor": "0f0f0f",
-				"theme": "Dark"
-			}
-		],
+		"windows": [],
 		"security": {
 			"csp": null
 		}
