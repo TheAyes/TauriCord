@@ -8,10 +8,22 @@
 		"opener:default",
 		"core:webview:allow-create-webview",
 		"core:webview:allow-create-webview-window",
+		"core:webview:allow-internal-toggle-devtools",
 		"core:window:allow-close",
+		"opener:allow-open-url",
+		"opener:allow-open-path",
+		"opener:allow-default-urls",
+		"opener:allow-reveal-item-in-dir",
 		{
 			"identifier": "http:default",
-			"allow": [{ "url": "https://*.discord.com/app" }, { "url": "https://discord.com/app" }],
+			"allow": [
+				{
+					"url": "https://*.discord.com/app"
+				},
+				{
+					"url": "https://discord.com/app"
+				}
+			],
 			"deny": []
 		}
 	]
