@@ -1,10 +1,16 @@
 import { WebviewWindow } from "@tauri-apps/api/webviewWindow";
-import { sleep } from "shared/src/utils.ts";
+import { getCurrentWindow } from "@tauri-apps/api/window";
 
-await sleep(5);
+export const createMainWindow = () => {
+	const mainWindow = new WebviewWindow("main", { url: "https://discord.com/app" });
 
-const webview = new WebviewWindow("main", { url: "https://discord.com/app" });
+	mainWindow.once("tauri://window-created", () => {
+		const splashWindow = getCurrentWindow();
 
-webview.once("tauri://window-created", () => {
-	console.log("Hello World!a");
-});
+		splashWindow.close();
+	});
+
+	mainWindow.once("tauri://error", (error) => {
+		console.error(error.payload);
+	});
+};

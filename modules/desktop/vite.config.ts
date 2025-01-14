@@ -1,4 +1,3 @@
-import { resolve } from "node:path";
 import { defineConfig } from "vite";
 
 const host = process.env.TAURI_DEV_HOST;
@@ -6,11 +5,11 @@ const host = process.env.TAURI_DEV_HOST;
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
 	build: {
+		manifest: true,
+		root: "/modules/desktop/src/splash",
 		rollupOptions: {
-			root: "src",
 			input: {
-				main: resolve(__dirname, "index.html"),
-				splash: resolve(__dirname, "splash/index.html")
+				splash: "index.html"
 			}
 		}
 	},

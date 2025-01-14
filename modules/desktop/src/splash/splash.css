@@ -1,6 +1,7 @@
 body {
 	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 	height: 100%;
+	user-select: none;
 	color: #dedef0;
 	background: rgb(33, 33, 33);
 }
